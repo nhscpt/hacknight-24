@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.panel {
+    width: 50vw; /* Adjust the width as needed */
+    padding-bottom: 3vh;
+    background-color: white;
+    border: solid;
+    border-color: lightgray;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 5vh;
+}
+
+.createAccountButton {
+    font-size: small;
+    color: gray;
+    cursor: pointer;
+}

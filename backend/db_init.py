@@ -13,16 +13,16 @@ def initialize_redis():
         {
             'username': 'TheGurch42',
             'password': '$argon2id$v=19$m=524288,t=2,p=8$P79FpOS8UlCPPGKgxZmTPQ$P4PowxzBV8FlA9HGJTBu7JduaeVhaezEj3ydGu37ZdY',
-            'friends': ['Landevious99'],
-            'flangs': ['English', 'Russian'],
-            'llangs': ['Spanish']
+            'friends': [],
+            'flangs': ['0'],
+            'llangs': ['1']
         },
         {
             'username': 'Landevious99',
             'password': '$argon2id$v=19$m=524288,t=2,p=8$P79FpOS8UlCPPGKgxZmTPQ$P4PowxzBV8FlA9HGJTBu7JduaeVhaezEj3ydGu37ZdY',
-            'friends': ['TheGurch42'],
-            'flangs': ['English', 'Russian', 'Spanish'],
-            'llangs': ['French']
+            'friends': [],
+            'flangs': ['1'],
+            'llangs': ['0']
         }
     ]
 

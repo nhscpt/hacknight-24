@@ -10,7 +10,7 @@
 .fieldset-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 105%;
 }
 
 .custom-fieldset {
@@ -54,3 +54,7 @@
 .submit-button:hover {
     background-color: #e0e0e0;
 }
+
+/* .panel {
+    width:150%;
+} */

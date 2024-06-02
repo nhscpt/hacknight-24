@@ -1,5 +1,13 @@
 import redis
 import uuid
+from pydantic import BaseModel
+
+class UserData(BaseModel):
+    username: str
+    password: str
+    friends: list
+    flangs: list
+    llangs: list
 
 class DB:
     r = None
@@ -11,7 +19,7 @@ class DB:
         self.r = redis.Redis(host=self.ip, port=self.port, db=0)
 
 
-    def add_user(self, username, password, friends, flangs, llangs):
+    def add_user(self, username, password, flangs, llangs, friends=[]):
         user_uuid = str(uuid.uuid4())
         user_key = f"user:{user_uuid}"
         
@@ -96,15 +104,67 @@ class DB:
     def add_friend(self, uuid1, uuid2):
         # construct the user key for uuid1
         user1_key = f"user:{uuid1}"
+
+        # check if uuid2 is already in uuid1's friends list
+        friends_list = self.r.lrange(f"{user1_key}:friends", 0, -1)
+        if uuid2.encode('utf-8') in friends_list:
+            return False
+
+        # add user2's UUID to user1's friends list
+        self.r.rpush(f"{user1_key}:friends", uuid2)
+        return True
+
         
-        # get username of user2
-        user2_data = self.get_user_by_uuid(uuid2)
-        if not user2_data:
-            return None
-        
-        user2_username = user2_data['username']
-        
-        # add user2's username to user1's friends list
-        self.r.rpush(f"{user1_key}:friends", user2_username)
+    def update_username(self, uuid, new_username: str):
+        user_key = f"user:{uuid}"
+    
+        self.r.hset(user_key, "username", new_username)
         return True
         
+    def update_password(self, uuid, new_password: str):
+        user_key = f"user:{uuid}"
+    
+        self.r.hset(user_key, "password", new_password)
+        return True
+        
+    def update_friends(self, uuid, new_friends: list[str]):
+        user_key = f"user:{uuid}:friends"
+        
+        self.r.delete(user_key)
+
+        if new_friends:
+            self.r.rpush(user_key, *new_friends)
+        
+        return True
+        
+    def update_flangs(self, uuid, new_flangs: list[str]):
+        user_key = f"user:{uuid}:flangs"
+        
+        self.r.delete(user_key)
+        
+        if new_flangs:
+            self.r.rpush(user_key, *new_flangs)
+        
+        return True
+
+    def update_llangs(self, uuid, new_llangs: list[str]):
+        user_key = f"user:{uuid}:llangs"
+        
+        self.r.delete(user_key)
+        
+        if new_llangs:
+            self.r.rpush(user_key, *new_llangs)
+        
+        return True
+        
+        
+    def remove_friend(self, uuid, friend: str):
+        # Remove a friend from the friends list
+        user_key = f"user:{uuid}:friends"
+        
+        # Remove the friend from the list
+        self.r.lrem(user_key, 0, friend)
+        
+        return True
+        
+db = DB("localhost", 6379)

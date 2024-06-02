@@ -1,0 +1,78 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.side-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 18px;
+}
+
+.friends-list {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #444;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.call-button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.call-button:hover {
+  background-color: #005f73;
+}

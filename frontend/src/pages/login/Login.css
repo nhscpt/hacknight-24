@@ -1,22 +1,157 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+}
+
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: url('https://svs.gsfc.nasa.gov/vis/a030000/a030800/a030878/BlackMarble_2016_rotate_print.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .panel {
-
-    padding-left: 5vh;
-    padding-right: 5vh;
-    padding-bottom: 5vh;
-
-    background-color: white;
-
-    border: solid;
-    border-color: lightgray;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid lightgray;
     border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 .title {
-    margin-bottom: 5vh;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.createAccountButton {
+    font-size: small;
+    color: gray;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.createAccountButton:hover {
+    color: #007BFF;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.main video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.panel {
+    padding-left: 8vh;
+    padding-right: 8vh;
+    background: rgba(255,255,255,0.5); /* Adjusted transparency */
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.createAccountButton {
+    font-size: small;
+    color: gray;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.createAccountButton:hover {
+    color: #007BFF;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
