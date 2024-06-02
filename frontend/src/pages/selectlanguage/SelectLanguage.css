@@ -1,0 +1,56 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Adjust as needed */
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the form on the page */
+}
+
+.fieldset-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.custom-fieldset {
+    border: 1px solid #ccc; /* Add a border to the fieldset */
+    padding: 10px; /* Add some padding inside the fieldset */
+    border-radius: 5px; /* Rounded corners for the fieldset */
+    margin-bottom: 20px; /* Space between fieldsets */
+    width: 48%; /* Make sure the fieldsets fit side by side */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.custom-legend {
+    font-weight: bold; /* Make the legend text bold */
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column; /* Ensure checkboxes are in a column */
+}
+
+.checkbox-label {
+    margin-bottom: 10px; /* Space between labels vertically */
+    display: flex;
+    align-items: center; /* Align checkbox and label text vertically */
+}
+
+.checkbox-input {
+    margin-right: 10px; /* Space between checkbox and label text */
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #e0e0e0;
+}

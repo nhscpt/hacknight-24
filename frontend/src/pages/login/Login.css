@@ -1,0 +1,22 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel {
+
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-bottom: 5vh;
+
+    background-color: white;
+
+    border: solid;
+    border-color: lightgray;
+    border-radius: 10px;
+}
+
+.title {
+    margin-bottom: 5vh;
+}
